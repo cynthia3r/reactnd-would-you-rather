@@ -1,25 +1,20 @@
-import logo from '../logo.svg';
-import '../App.css';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { handleInitialData } from '../actions/shared';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/components/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    componentDidMount() {
+        this.props.dispatch(handleInitialData());
+    }
+    render() {
+        return (
+            <div>
+                Starter Code
+            </div>
+        )
+    }
 }
 
-export default App;
+// using connect() function to upgrade the component to a container
+// so that the container can read state from the store and dispatch actions
+export default connect()(App)
