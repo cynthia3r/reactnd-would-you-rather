@@ -7,6 +7,8 @@ import Nav from './Nav';
 import Home from './Home';
 import NewPollQuestion from './NewPollQuestion';
 import LeaderBoard from './LeaderBoard';
+import Login from './Login';
+import Logout from './Logout';
 
 class App extends Component {
     componentDidMount() {
@@ -19,11 +21,14 @@ class App extends Component {
                 <div className='container'>
                     <Nav />
                     {this.props.loading === true
-                        ? null
+                        ? <div>
+                            <Route path='/' exact component={Login} />
+                        </div>
                         : <div>
-                            <Route path='/' exact component={Home} />
+                            <Route path='/home' exact component={Home} />
                             <Route path='/add' exact component={NewPollQuestion} />
                             <Route path='/leaderboard' exact component={LeaderBoard} />
+                            <Route path='/logout' exact component={Logout} />
                         </div>}
                 </div>
             </Router>
@@ -33,8 +38,8 @@ class App extends Component {
 
 function mapStateToProps({ authUser }) {
     return {
-        // loading: authUser === null
-        loading: false
+        loading: authUser === null
+        // loading: false
     };
 }
 
