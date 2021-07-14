@@ -44,7 +44,7 @@ and provies the following methods to perform necessary operations on the backend
 * `_saveQuestion`
 * `_saveQuestionAnswer`
 
-## Application mock screen designs (provided by Udacity)
+## Application mock screen designs
 1. SignIn page
 ![App SignIn Page](mock_screen_layouts/SignIn.png "SignIn page")
 2. Home page
@@ -57,3 +57,5 @@ and provies the following methods to perform necessary operations on the backend
 ![App Poll Result Page](mock_screen_layouts/ViewPollResult.png "Poll Result page")
 6. LeaderBoard page
 ![App LeaderBoard Page](mock_screen_layouts/LeaderBoard.png "LeaderBoard page")
+Note: The above mock screen designs provided by Udacity are used as reference \
+to build the actual application
