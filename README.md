@@ -1,71 +1,53 @@
-# Getting Started with Create React App
+# Would You Rather React App
+## Project Overview
+The project is build as a web application that lets a user play the “Would You Rather?” game. The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. Answering "neither" or "both" is against the rules.
+## App Functionality
+Using the app, users will be able to 
+* **answer questions**, 
+* **see which questions they haven’t answered**,
+* **see how other people have voted**,
+* **post questions**, and 
+* **see the ranking of users on the leaderboard**
 
+## Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project dependencies
+react-scripts from npm registry is used to build and run the app.
+Please refer dependencies and scripts section in [`package.json`](package.json) for more details.
 
-## Available Scripts
+In the project directory, you can run the below scripts:
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
+* the app can be accessed in the browser using `http://localhost:3000/`
 
-In the project directory, you can run:
+Additional information:
+* project can be build with `npm run build`
+## Technical Details
+* `React UI Library` is used to design the presentational and controlled UI components
+* `Redux` is used to improve the predictability of the application’s state; establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components.
+For this application, most of the application’s state is managed by Redux. However, component state has been used to handle form input fields and controlled components. Otherwise, the rest of the state for the application is controlled by the reducers.
+* Dispatch of actions to reducers is managed via `Redux Thunk` middleware. Also logger middleware is used for debugging purpose.
+* `React Router` is used for managing application routes
 
-### `npm start`
+## Application Routes
+* Home Page: `/`
+* New Question: `/add`
+* LeaderBoard: `/leaderboard`
+* Specific Poll Question: `questions/:question_id`
+## Backend Server
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The App leverages the [`_DATA.js`](src/utils/_DATA_.js) which serves as a backend server 
+and provies the following methods to perform necessary operations on the backend:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* `_getUsers`
+* `_getQuestions`
+* `_saveQuestion`
+* `_saveQuestionAnswer`
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# reactnd-would-you-rather
+## Application screens
+![App SignIn Page](mock_screen_layouts/SignIn.png "SignIn page")
+![App Home Page](mock_screen_layouts/HomePage.png "Home page")
+![App New Question Page](mock_screen_layouts/CreateNewQuestion.png "NewQuestion page")
+![App Vote Submit Page](mock_screen_layouts/SubmitAnswer.png "Vote Submit page")
+![App Poll Result Page](mock_screen_layouts/ViewPollResult.png "Poll Result page")
+![App LeaderBoard Page](mock_screen_layouts/LeaderBoard.png "LeaderBoard page")
