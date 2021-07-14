@@ -44,7 +44,7 @@ and provies the following methods to perform necessary operations on the backend
 * `_saveQuestion`
 * `_saveQuestionAnswer`
 
-## Application mock screen designs
+## Application mock screen designs (provided by Udacity)
 1. SignIn page
 ![App SignIn Page](mock_screen_layouts/SignIn.png "SignIn page")
 2. Home page
