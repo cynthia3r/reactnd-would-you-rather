@@ -36,7 +36,7 @@ For this application, most of the application’s state is managed by Redux. How
 * Specific Poll Question: `questions/:question_id`
 ## Backend Server
 
-The App leverages the [`_DATA.js`](src/utils/_DATA_.js) which serves as a backend server 
+The App leverages the [`_DATA.js`](src/utils/_DATA.js) which serves as a backend server 
 and provies the following methods to perform necessary operations on the backend:
 
 * `_getUsers`
@@ -45,9 +45,15 @@ and provies the following methods to perform necessary operations on the backend
 * `_saveQuestionAnswer`
 
 ## Application screens
+1. SignIn page
 ![App SignIn Page](mock_screen_layouts/SignIn.png "SignIn page")
+2. Home page
 ![App Home Page](mock_screen_layouts/HomePage.png "Home page")
+3. New Question page
 ![App New Question Page](mock_screen_layouts/CreateNewQuestion.png "NewQuestion page")
+4. Vote Submit page
 ![App Vote Submit Page](mock_screen_layouts/SubmitAnswer.png "Vote Submit page")
+5. Poll Result page
 ![App Poll Result Page](mock_screen_layouts/ViewPollResult.png "Poll Result page")
+6. LeaderBoard page
 ![App LeaderBoard Page](mock_screen_layouts/LeaderBoard.png "LeaderBoard page")
