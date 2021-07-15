@@ -22,15 +22,17 @@ In the project directory, you can run the below scripts:
 
 Additional information:
 * project can be build with `npm run build`
-## Technical Details
+## Technologies used
 * `React UI Library` is used to design the presentational and controlled UI components
+* `React-Bootstrap` UI Foundation library
 * `Redux` is used to improve the predictability of the application’s state; establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components.
 For this application, most of the application’s state is managed by Redux. However, component state has been used to handle form input fields and controlled components. Otherwise, the rest of the state for the application is controlled by the reducers.
 * Dispatch of actions to reducers is managed via `Redux Thunk` middleware. Also logger middleware is used for debugging purpose.
 * `React Router` is used for managing application routes
 
 ## Application Routes
-* Home Page: `/`
+* Login: `/`
+* Home Page: `/home`
 * New Question: `/add`
 * LeaderBoard: `/leaderboard`
 * Specific Poll Question: `questions/:question_id`
@@ -44,7 +46,10 @@ and provies the following methods to perform necessary operations on the backend
 * `_saveQuestion`
 * `_saveQuestionAnswer`
 
-## Application mock screen designs
+Limitation: The app uses a fake backend database server so the application state will 
+not persist after refresh
+
+## Application UI design
 1. SignIn page
 ![App SignIn Page](mock_screen_layouts/SignIn.png "SignIn page")
 2. Home page
@@ -57,4 +62,4 @@ and provies the following methods to perform necessary operations on the backend
 ![App Poll Result Page](mock_screen_layouts/ViewPollResult.png "Poll Result page")
 6. LeaderBoard page
 ![App LeaderBoard Page](mock_screen_layouts/LeaderBoard.png "LeaderBoard page")
-Note: The above mock screen designs provided by Udacity are used as reference to build the actual application
+Note: The screenshots are referenced from Udacity materials
