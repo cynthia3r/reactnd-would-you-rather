@@ -23,11 +23,13 @@ class NewPollQuestion extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const { optionOneText, optionTwoText } = this.state;
-        const { dispatch, authUser } = this.props;
+        const { dispatch } = this.props;
 
         dispatch(handleAddQuestion(optionOneText, optionTwoText))
             .then(() => 
                 this.setState(() => ({
+                        optionOneText: '',
+                        optionTwoText: '',
                         redirectToHome: true,
                 }))
             );
@@ -38,7 +40,7 @@ class NewPollQuestion extends Component {
         const buttonStatus = optionOneText === '' || optionTwoText === '';
 
         if( redirectToHome) {
-            return <Redirect to='/' />
+            return <Redirect to='/home' />
         }
 
         return (
@@ -53,6 +55,8 @@ class NewPollQuestion extends Component {
                         name='optionOneText'
                     />
                     <br/>
+                    <label>OR</label>
+                    <br/>
                     <input
                         placeholder='Option Two'
                         onChange={this.handleChange}
@@ -60,8 +64,11 @@ class NewPollQuestion extends Component {
                         name='optionTwoText'
                     />
                     <br/>
-                    <button type='submit' disabled={buttonStatus}>
-                        Submit
+                    <button 
+                        type='submit'
+                        className='btn'
+                        disabled={buttonStatus}>
+                            Submit
                     </button>
                 </form>
             </div>
@@ -69,10 +76,4 @@ class NewPollQuestion extends Component {
     }
 }
 
-function mapStateToProps({ authUser}) {
-    return {
-        authUser,
-    }
-}
-
-export default connect(mapStateToProps)(NewPollQuestion);
+export default connect()(NewPollQuestion);
