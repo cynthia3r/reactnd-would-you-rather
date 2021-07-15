@@ -29,6 +29,7 @@ class Nav extends Component {
                             <img 
                                 src={users[authUser].avatarURL}
                                 alt={`$users[authUser].avatarURL`}
+                                className='avatar'
                             />
                         </span>
                     </li>
@@ -42,7 +43,7 @@ class Nav extends Component {
                 <ul>
                     <li>
                         <NavLink to='/' exact activeClassName='active'>
-                            Login
+                            {/* Sign-In Page */}
                         </NavLink>
                     </li>
                 </ul>

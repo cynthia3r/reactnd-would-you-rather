@@ -1,39 +1,54 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setAuthUser } from '../actions/authUser';
+import logo from '../logo.svg';
 
 class Login extends Component {
+
     handleSubmit = (e) => {
         e.preventDefault();
         
         const userId = this.userId.value;
         const { dispatch } = this.props;
 
-        if(userId !== '')
+        const { from } = this.props.location.state || 
+                            { from: { pathname: '/home'}}
+
+        if(userId !== '') {
             dispatch(setAuthUser(userId));
+            this.props.history.push(from);
+        }
     }
 
     render() {
-        const { userIds } = this.props;
+        const { userIds, users } = this.props;
+
         return (
-            <div>
-                <h3 className='center'>Please Login to play Would You Rather Game</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Select Login User:</label>
-                    <select ref={(id) => (this.userId = id)}>
-                        {
-                            userIds.map((id) => (
-                                <option value={id} key={id}>
-                                    {id}
-                                </option>
-                            ))
-                        }
-                    </select>
-                    <br/>
-                    <button type='submit'>
-                        Login
-                    </button>
-                </form>
+            <div className='center'>
+                <h3 className='center'>Welcome to the Would You Rather App!</h3>
+                <h4 className='center'>Please Sign in to continue...</h4>
+                <header className='App-header'>
+                    <img src={logo} className="App-logo" alt="logo" />
+                </header>
+                <div>
+                    <form onSubmit={this.handleSubmit} className='center'>
+                        <label >Select Login User:</label>
+                        <br/>
+                        <select ref={(id) => (this.userId = id)}>
+                            {
+                                userIds.map((id) => (
+                                    <option value={id} key={id}>
+                                        {users[id].name}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                        <br/>
+                        <button type='submit' className='btn'>
+                            Sign In
+                        </button>
+                    </form>
+                </div>
             </div>
         );
     }
@@ -42,6 +57,7 @@ class Login extends Component {
 function mapStateToProps({ users }) {
     return {
         userIds: Object.keys(users),
+        users,
     };
 }
 
