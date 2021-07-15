@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import '../App.css'
 import { handleInitialData } from '../actions/shared';
 import Nav from './Nav';
 import Home from './Home';
@@ -9,7 +8,7 @@ import NewPollQuestion from './NewPollQuestion';
 import LeaderBoard from './LeaderBoard';
 import Login from './Login';
 import Logout from './Logout';
-
+import '../App.css'
 class App extends Component {
     componentDidMount() {
         this.props.dispatch(handleInitialData());
@@ -38,8 +37,7 @@ class App extends Component {
 
 function mapStateToProps({ authUser }) {
     return {
-        loading: authUser === null
-        // loading: false
+        loading: authUser === null,
     };
 }
 
