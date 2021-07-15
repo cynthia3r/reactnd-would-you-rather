@@ -25,6 +25,11 @@ class Nav extends Component {
                         </NavLink>
                     </li>
                     <li>
+                        <div className='author'>
+                            [ Hello, {users[authUser].name}  ]
+                        </div>
+                    </li>
+                    <li>
                         <span>
                             <img 
                                 src={users[authUser].avatarURL}
