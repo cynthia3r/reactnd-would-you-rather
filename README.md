@@ -27,7 +27,7 @@ Additional information:
 * `React-Bootstrap` UI Foundation library
 * `Redux` is used to improve the predictability of the application’s state; establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components.
 For this application, most of the application’s state is managed by Redux. However, component state has been used to handle form input fields and controlled components. Otherwise, the rest of the state for the application is controlled by the reducers.
-* Dispatch of actions to reducers is managed via `Redux Thunk` middleware. Also logger middleware is used for debugging purpose.
+* Dispatch of async actions to reducers is managed via `Redux Thunk` middleware. Also logger middleware is used for debugging purpose.
 * `React Router` is used for managing application routes
 
 ## Application Routes
