@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from 'react-bootstrap/Card';
-
-
 class UserScoreCard extends Component {
     render() {
         const { user } = this.props;
         const { name, avatarURL, answers, questions } = user;
 
-        return (
+        return ( 
             <Card>
                 <Card.Header>
                     <span>
@@ -19,17 +17,16 @@ class UserScoreCard extends Component {
                         />
                     </span>
                     {name}
+                    <br />
+                    <b>Score: {Object.keys(answers).length + questions.length}</b>
                 </Card.Header>
                 <Card.Body>
-                    <b>Score: {Object.keys(answers).length + questions.length}</b>   
-                </Card.Body>
-                <Card.Footer>
                     <Card.Text>
                         Answered Questions: {Object.keys(answers).length}
                         <br />
                         Created Questions: {questions.length}
-                    </Card.Text>
-                </Card.Footer>
+                    </Card.Text>   
+                </Card.Body>
             </Card>
         );
     }
