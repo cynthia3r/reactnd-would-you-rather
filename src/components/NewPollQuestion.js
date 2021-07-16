@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 import { handleAddQuestion } from '../actions/questions';
 
 class NewPollQuestion extends Component {
@@ -44,34 +45,41 @@ class NewPollQuestion extends Component {
         }
 
         return (
-            <div>
-                <h2>Create New Question</h2>
-                <h3>Would you rather...</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        placeholder='Option One'
-                        onChange={this.handleChange}
-                        value={optionOneText}
-                        name='optionOneText'
-                    />
-                    <br/>
-                    <label>OR</label>
-                    <br/>
-                    <input
-                        placeholder='Option Two'
-                        onChange={this.handleChange}
-                        value={optionTwoText}
-                        name='optionTwoText'
-                    />
-                    <br/>
-                    <button 
-                        type='submit'
-                        className='btn'
-                        disabled={buttonStatus}>
-                            Submit
-                    </button>
-                </form>
-            </div>
+            <Fragment>
+                <Card>
+                    <Card.Header>
+                        <b>Create New Question</b>
+                        <br/>
+                        Would you rather...
+                    </Card.Header>
+                    <Card.Body>
+                        <Card.Text>
+                            <form onSubmit={this.handleSubmit}>
+                                <input
+                                    placeholder='Option One'
+                                    onChange={this.handleChange}
+                                    value={optionOneText}
+                                    name='optionOneText'
+                                />
+                                <br/><br/>
+                                <input
+                                    placeholder='Option Two'
+                                    onChange={this.handleChange}
+                                    value={optionTwoText}
+                                    name='optionTwoText'
+                                />
+                                <br/>
+                                <button 
+                                    type='submit'
+                                    className='btn'
+                                    disabled={buttonStatus}>
+                                        Submit
+                                </button>
+                            </form>
+                        </Card.Text> 
+                    </Card.Body>
+                </Card>
+            </Fragment>
         );
     }
 }
