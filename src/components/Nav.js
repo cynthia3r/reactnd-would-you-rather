@@ -10,7 +10,7 @@ class Nav extends Component {
             { authUser ? (
                 <ul>
                     <li>
-                        <NavLink to='/home' exact activeClassName='active'>
+                        <NavLink to='/' exact activeClassName='active'>
                             Home
                         </NavLink>
                     </li>

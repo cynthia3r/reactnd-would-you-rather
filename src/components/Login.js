@@ -11,12 +11,8 @@ class Login extends Component {
         const userId = this.userId.value;
         const { dispatch } = this.props;
 
-        const { from } = this.props.location.state || 
-                            { from: { pathname: '/home'}}
-
         if(userId !== '') {
             dispatch(setAuthUser(userId));
-            this.props.history.push(from);
         }
     }
 

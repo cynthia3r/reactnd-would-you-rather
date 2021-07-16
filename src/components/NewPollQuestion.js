@@ -41,7 +41,7 @@ class NewPollQuestion extends Component {
         const buttonStatus = optionOneText === '' || optionTwoText === '';
 
         if( redirectToHome) {
-            return <Redirect to='/home' />
+            return <Redirect to='/' />
         }
 
         return (
