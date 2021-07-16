@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import Nav from './Nav';
@@ -18,6 +18,7 @@ class App extends Component {
     render() {
         return (
             <Router>
+                <Fragment>
                 <div className='container'>
                     <Nav />
                     {this.props.loading === true
@@ -25,13 +26,16 @@ class App extends Component {
                             <Route path='/' exact component={Login} />
                         </div>
                         : <div>
-                            <Route path='/home' exact component={Home} />
-                            <Route path='/add' exact component={NewPollQuestion} />
-                            <Route path='/questions/:id' exact component={ViewQuestion} />
-                            <Route path='/leaderboard' exact component={LeaderBoard} />
-                            <Route path='/logout' exact component={Logout} />
+                            <Switch>
+                                <Route path='/home' exact component={Home} />
+                                <Route path='/add' exact component={NewPollQuestion} />
+                                <Route path='/questions/:id' exact component={ViewQuestion} />
+                                <Route path='/leaderboard' exact component={LeaderBoard} />
+                                <Route path='/logout' exact component={Logout} />
+                            </Switch>                          
                         </div>}
                 </div>
+                </Fragment>
             </Router>
         );
     }
