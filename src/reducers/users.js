@@ -21,15 +21,14 @@ export default function users(state = {}, action) {
                 }
             };
         case ADD_QUESTION_ANSWER :
-            const { authUser, questionId, answer } = action.answerDetails;
             
             return {
                 ...state,
-                [authUser]: {
-                    ...state[authUser],
+                [action.authUser]: {
+                    ...state[action.authUser],
                     answers: {
-                        ...state[authUser].answers,
-                        [questionId]: answer,
+                        ...state[action.authUser].answers,
+                        [action.questionId]: action.answer,
                     }
                 },
             };
