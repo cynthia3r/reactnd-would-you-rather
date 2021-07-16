@@ -31,8 +31,7 @@ For this application, most of the application’s state is managed by Redux. How
 * `React Router` is used for managing application routes
 
 ## Application Routes
-* Login: `/`
-* Home Page: `/home`
+* Home Page: `/`
 * New Question: `/add`
 * LeaderBoard: `/leaderboard`
 * Specific Poll Question: `questions/:question_id`
