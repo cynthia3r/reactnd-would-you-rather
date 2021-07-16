@@ -13,7 +13,7 @@ import '../App.css'
 import PageNotFound from './PageNotFound';
 class App extends Component {
     componentDidMount() {
-        this.props.dispatch(handleInitialData());
+        this.props.handleInitialData();
     }
 
     render() {
@@ -51,4 +51,4 @@ function mapStateToProps({ authUser }) {
 
 // using connect() function to upgrade the component to a container
 // so that the container can read state from the store and dispatch actions
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { handleInitialData })(App);
