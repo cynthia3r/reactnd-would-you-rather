@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import UserScoreCard from './UserScoreCard';
 
@@ -6,11 +6,11 @@ class LeaderBoard extends Component {
     render() {
         const { userIds } = this.props;
         return (
-            <div>
+            <Fragment>
                 {userIds.map((userId) => (
                     <UserScoreCard key={userId} id={userId} />
                 ))}
-            </div>
+            </Fragment>
         );
     }
 }
