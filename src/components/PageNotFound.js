@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class PageNotFound extends Component {
     render() {
         return (
-            <div>
+            <Fragment>
                 <h3 className='center'>404 Error: Page Not Found</h3>
-            </div>
+            </Fragment>
         );
     }
 }

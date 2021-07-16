@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { Card, Button } from 'react-bootstrap';
 import { formatDate } from '../utils/helpers';
 
 class QuestionCard extends Component {
@@ -12,26 +11,30 @@ class QuestionCard extends Component {
         const { name, avatarURL } = user;
 
         return (
-            <Card>
-                <Card.Header>
-                    <span>
-                        <img 
-                            src={avatarURL}
-                            alt={`$avatarURL`}
-                            className='avatar'
-                        />
-                    </span>
-                    {name} asked @ {formatDate(timestamp)}
-                    <br/>
-                    Would you rather?
-                </Card.Header>
-                <Card.Body>
-                    <Card.Text>{optionOne.text.slice(0, 100)}...</Card.Text>
-                    <Link to={`questions/${id}`}>
-                        <Button>View Poll</Button>
-                    </Link>
-                </Card.Body>
-            </Card>
+            <Fragment>
+                <Card>
+                    <Card.Header>
+                        <span>
+                            <img
+                                src={avatarURL}
+                                alt={`$avatarURL`}
+                                className='avatar'
+                            />
+                        </span>
+                        Asked by <b>{name}</b> @ {formatDate(timestamp)}
+                        <br />
+                        Would you rather?
+                    </Card.Header>
+                    <Card.Body>
+                        <Card.Text>{optionOne.text.slice(0, 80)}... or</Card.Text>
+                        <Card.Text>{optionTwo.text.slice(0, 80)}...</Card.Text>
+                        <Link to={`questions/${id}`}>
+                            <Button>View Poll</Button>
+                        </Link>
+                    </Card.Body>
+                </Card>
+            </Fragment>
+            
         );
     }
 }

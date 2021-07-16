@@ -11,7 +11,7 @@ class ViewQuestion extends Component {
 
         return (
             <Fragment>
-                {answered ? 
+                { answered ? 
                     <ViewPollResult key={questionId} questionId={questionId} /> : 
                     <SubmitVote key={questionId} questionId={questionId} /> }
             </Fragment>

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+import { Tabs, Tab } from 'react-bootstrap';
 import QuestionList from './QuestionList';
 
 class Home extends Component {

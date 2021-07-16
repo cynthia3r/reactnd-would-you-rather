@@ -50,7 +50,7 @@ class NewPollQuestion extends Component {
                     <Card.Header>
                         <b>Create New Question</b>
                         <br/>
-                        Would you rather...
+                        Would you rather?
                     </Card.Header>
                     <Card.Body>
                         <Card.Text>

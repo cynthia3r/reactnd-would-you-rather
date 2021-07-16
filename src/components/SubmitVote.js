@@ -18,6 +18,7 @@ class SubmitVote extends Component {
 
     render() {
         const { question, user } = this.props;
+        
         if(question === null)
             return <PageNotFound />
 
@@ -34,7 +35,7 @@ class SubmitVote extends Component {
                             className='avatar'
                         />
                     </span>
-                    {name} asked @ {formatDate(timestamp)}
+                    Asked by <b>{name}</b> @ {formatDate(timestamp)}
                 </Card.Header>
                 <Card.Body>
                     <Card.Text><b>Would you rather?</b></Card.Text>
