@@ -45,7 +45,7 @@ and provies the following methods to perform necessary operations on the backend
 * `_saveQuestion`
 * `_saveQuestionAnswer`
 
-Limitation: The app uses a fake backend database server so the application state will 
+Limitation: The app uses a dummy backend database server so the application state will 
 not persist after refresh
 
 ## Application UI design
